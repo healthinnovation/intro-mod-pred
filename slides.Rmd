@@ -1,0 +1,74 @@
+---
+title: "Introducción al modelamiento predictivo"
+subtitle: "Sesión 1"
+author: "Renato Cava, Diego Villa"
+institute: "Laboratorio de Innovación en Salud"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Temas
+1. Aprendizaje estadístico
+  1. ¿Qué es el aprendizaje estadístico?
+  2. ¿Por qué usar aprendizaje estadístico?
+  3. Aprendizaje estadístico, aprendizaje de máquina y ciencia de datos
+  4. Tipos de aprendizaje estadístico
+  5. Algoritmos y modelos
+
+2. Modelamiento predictivo
+  1. ¿Qué es modelamiento predictivo?
+  2. Tipos de modelos predictivos
+  3. Principios del modelamiento predictivo
+  4. Principales desafíos
+
+---
+class: inverse, center, middle
+
+# Aprendizaje estadístico
+
+---
+
+# ¿Qué es el aprendizaje estadístico?
+
+---
+
+# ¿Por qué usar aprendizaje estadístico?
+
+---
+
+# Aprendizaje estadístico, aprendizaje de máquina y ciencia de datos
+
+---
+
+# Tipos de aprendizaje estadístico
+
+---
+
+# Algoritmos y modelos
+
+---
+class: inverse, center, middle
+
+# Modelamiento predictivo
+
+---
+
+# ¿Qué es modelamiento predictivo?
+
+---
+
+# Tipos de modelos predictivos
+
+---
+
+# Principios del modelamiento predictivo
+
+---
+
+# Principales desafíos
