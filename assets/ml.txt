@@ -1,0 +1,5 @@
+The field of pattern recognition is concerned with the automatic discovery of regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into categories.
+The term machine learning refers to the automated detection of meaningful patterns in data.
+Machine learning is the science and art of programming computers so they can learn from data.
+The goal of machine learning is to develop methods that can automatically detect patterns in data, and the to use the uncovered patterns to predict future data on other outcomes of interest.
+The field of machine learning is concerned with the question of how to construct computer programs the automatically improve with experience.

@@ -1,0 +1,4 @@
+Statistical learning refers to a set of tools for modeling and understanding complex datasets.
+Statistical learning theory is the theory that explores ways of estimating functional dependency or association from a given collection of data.
+We consider the learning problem as a problem of finding a desired dependence or association using a limited number of observations.
+To extract important patterns and trends, and understanding what the data says. We call this learning from data.
