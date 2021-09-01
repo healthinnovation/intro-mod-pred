@@ -4,7 +4,7 @@
     <title>Introducción al modelamiento predictivo</title>
     <meta charset="utf-8" />
     <meta name="author" content="Renato Cava, Diego Villa" />
-    <meta name="date" content="2021-08-08" />
+    <meta name="date" content="2021-08-25" />
     <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -17,10 +17,9 @@ class: center, middle, inverse, title-slide
 ## Sesión 1
 ### Renato Cava, Diego Villa
 ### Laboratorio de Innovación en Salud
-### 2021-08-08
+### 2021-08-25
 
 ---
-
 
 
 
@@ -39,6 +38,7 @@ class: center, middle, inverse, title-slide
   4. Principales desafíos
 
 ---
+
 class: inverse, center, middle
 
 # Aprendizaje automático
@@ -275,17 +275,43 @@ Ejemplo:
 
 ---
 
-# Aprendizaje automático
+# ¿Por qué usar aprendizaje automático?&lt;sup&gt;1&lt;/sup&gt;
 
-**DISCLAIMER!**
+En resumen:
 
-Las máquinas en realidad no *aprenden*. Al menos no como lo hace un humano u otro animal. 
+- Problemas cuyas soluciones requerirían mucho trabajo manual o una serie extremedamente larga de reglas.
 
-En aprendizaje automático se asume que una función desconocida gobierna los patrones en los datos. El objetivo es aproximar esta función para poder **generalizar** sobre nuevos ejemplos. 
+- Problemas complejos para los cuales no existe una solución feasible utilizando métodos tradicionales.
 
-⚠️ El aprendizaje inductivo no es la única forma de aprendizaje.
+- Problemas donde la información está en constante actualización.
+
+- Para obtener insights de problemas complejos y conjuntos de datos masivos.
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+---
+
+# Inferencia inductiva
+
+Cuando generalizamos a partir de ejemplos, estamos haciendo **inferencia inductiva**. Este mismo principio se aplica en el aprendizaje automático, ya que utilizamos data de entrenamiento para que la máquina aprenda las reglas o asociaciones en ella.
+
+Sin embargo, las máquinas en realidad no *aprenden* como lo hace un humano u otro animal. 
+
+En aprendizaje automático se asume que una función desconocida gobierna los patrones en los datos. El objetivo es aproximar esta función utilizando data de entrenamiento para poder **generalizar** sobre nuevos ejemplos. 
+
+---
+
+# Inferencia inductiva
+
+Como todo en la vida, generalizar sobre un conjunto limitado de casos puede llevarnos a conclusiones erróneas. Necesitamos tener cierto conocimiento previo o **sesgo inductivo**.
+
+En aprendizaje automático, el sesgo inductivo se introduce mediante supuestos o restricciones en el proceso de aprendizaje. 
+
+Por ejemplo, en la regresión lineal simple uno de los sesgos inductivos es que la asociación entre el target y los predictores es lineal.
 
 Lectura recomendada: Capítulo 1 de *Understanding Machine Learning: From Theory to Algorithms* (2014) de Shalev-Shwartz y Ben-David.
+
 ---
 
 # Reconocimiento de patrones
@@ -330,9 +356,109 @@ class: center, middle
 
 ---
 
-# Algoritmos y modelos
+# Tipos de aprendizaje automático&lt;sup&gt;1&lt;/sup&gt;
+
+Podemos categorizar las técnicas de aprendizaje automático según los siguientes criterios:
+
+- Si se entrenan o no con supervisión humana: **Aprendizaje supervizado** o **no supervisado**, y **aprendizaje por refuerzo**.
+
+- Si se entrenan o no gradualmente mientras el sistema está operativo: **aprendizaje en línea** (*online*) o **aprendizaje por lotes** (*batch*).
+
+- Si memorizan toda la data y luego predicen comparando nuevos casos con la data aprendida, o crean un modelo a partir de los patrones aprendidos en la data y luego lo utilizan para predecir (inferencia inductiva): **Aprendizaje basado en instancias** (en memoria) o **aprendizaje basado en modelos**.
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
 
 ---
+
+# Aprendizaje supervisado &lt;sup&gt;1&lt;/sup&gt;
+
+En el aprendizaje supervisado, la data de entrenamiento incluye las etiquetas del target que queremos predecir.
+
+.center[![:scale 85%](images/05-supervised-learning.png)]
+
+A la tarea de aprendizaje supervisado se le llama **clasificación** cuando la etiqueta es una clase (correo spam o ham), y se le llama **regresión** cuando la etiqueta es un valor numérico (número de casos de COVID-19).
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+
+---
+
+# Aprendizaje supervisado &lt;sup&gt;1&lt;/sup&gt;
+
+Algunos de los algoritmos de aprendizaje supervisado más importantes son:
+
+- k-Vecinos más cercanos (*k-Nearest neighbors*)
+
+- Regresión lineal (*Linear regression*)
+
+- Regresión logística (*Logistic regression*)
+
+- Máquinas de vectores de soporte (*Support vector machines*, SVM)
+
+- Árboles de decisión (*Decision trees*) y Bosques aleatorios (*Random forests*)
+
+- Redes neuronales (*Neural networks*) - Supervisado y no supervisado
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+
+---
+
+# Aprendizaje no supervisado &lt;sup&gt;1&lt;/sup&gt;
+
+En el aprendizaje no supervisado, la data de entrenamiento no incluye etiquetas.
+
+.center[![:scale 60%](images/06-unsupervised-learning.png)]
+
+Este tipo de aprendizaje es más retador, pero en la práctica es más común tener datos no etiquetados. Diferentes tareas se pueden relizar sobre estos.
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+
+---
+
+# Aprendizaje no supervisado &lt;sup&gt;1&lt;/sup&gt;
+
+Las tareas de aprendizaje no supervisadoy algunos de sus algoritmos más importantes son:
+
+- Clustering
+  - k-Medias (*k-Means*)
+  - *Density-based spatial clustering of applications with noise* (DBSCAN)
+  - Análisis cluster jerárquico (*Hierarchical cluster analysis*, HCA)
+
+- Detección de anomalías y detección de novedades
+  - Máquinas de vectores de soporte de una clase (*One-class SVM*)
+  - Bosque de aislamiento (*Isolation forest*)
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+
+---
+
+# Aprendizaje no supervisado &lt;sup&gt;1&lt;/sup&gt;
+
+- Visualización y reducción de dimensiones
+ - Análisis de componentes principales (*Principal component analysis*, PCA)
+ - Análisis de componentes principales con kernel (*Kernel PCA*)
+ - *Locally-linear embedding*
+ - *t-Distributed stochastic neighbor embedding* (t-SNE)
+ 
+- Aprendizaje de reglas de asociación
+  - Algoritmo apriori
+  - *Equivalence class clustering and bottom-up lattice traversal* (ECLAT)
+
+.footnote[
+[1] Tomado de Géron (2019).
+]
+
+---
+
 class: inverse, center, middle
 
 # Modelamiento predictivo
